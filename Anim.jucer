@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="SXeHZR" name="Anim" projectType="guiapp" version="1.0.0"
+              juceLinkage="amalg_multi" buildVST="1" buildRTAS="0" buildAU="1"
+              pluginName="Juce Project" pluginDesc="Juce Project" pluginManufacturer="yourcompany"
+              pluginManufacturerCode="Manu" pluginCode="Plug" pluginChannelConfigs="{1, 1}, {2, 2}"
+              pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
+              pluginSilenceInIsSilenceOut="0" pluginTailLength="0" pluginEditorRequiresKeys="0"
+              pluginAUExportPrefix="JuceProjectAU" pluginAUViewClass="JuceProjectAU_V1"
+              pluginRTASCategory="" bundleIdentifier="com.yourcompany.Anim"
+              jucerVersion="5.3.2" pluginFormats="buildVST,buildAU">
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="~/SDKs/vstsdk2.4" rtasFolder="~/SDKs/PT_80_SDK"
+               objCExtraSuffix="CM0Rh9">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" optimisation="1" osxCompatibility="10.9 SDK"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path=""/>
+        <MODULEPATH id="juce_data_structures" path=""/>
+        <MODULEPATH id="juce_events" path=""/>
+        <MODULEPATH id="juce_graphics" path=""/>
+        <MODULEPATH id="juce_gui_basics" path=""/>
+        <MODULEPATH id="juce_gui_extra" path=""/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2005 targetFolder="Builds/VisualStudio2005" vstFolder="c:\SDKs\vstsdk2.4"
+            rtasFolder="c:\SDKs\PT_80_SDK" libraryType="1" juceFolder="..\..\juce"/>
+    <VS2008 targetFolder="Builds/VisualStudio2008" vstFolder="c:\SDKs\vstsdk2.4"
+            rtasFolder="c:\SDKs\PT_80_SDK" libraryType="1" juceFolder="..\..\juce"/>
+  </EXPORTFORMATS>
+  <CONFIGURATIONS>
+    <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Anim"/>
+    <CONFIGURATION name="Release" isDebug="0" optimisation="2" targetName="Anim"/>
+  </CONFIGURATIONS>
+  <MAINGROUP id="fsJrUo" name="Anim">
+    <GROUP id="KI7bs0" name="Source">
+      <GROUP id="dsZusx" name="Utility">
+        <FILE id="vVyw4u" name="NamedSet.cpp" compile="1" resource="0" file="Source/Utility/NamedSet.cpp"/>
+        <FILE id="Zhs4iU" name="NamedSet.h" compile="0" resource="0" file="Source/Utility/NamedSet.h"/>
+      </GROUP>
+      <GROUP id="yD73Ne" name="Animation">
+        <FILE id="D6S7Ec" name="AnimatedValueTree.cpp" compile="1" resource="0"
+              file="Source/Animation/AnimatedValueTree.cpp"/>
+        <FILE id="PMiG8o" name="AnimatedValueTree.h" compile="0" resource="0"
+              file="Source/Animation/AnimatedValueTree.h"/>
+        <FILE id="Qqf0ZA" name="AnimatedObject.cpp" compile="1" resource="0"
+              file="Source\Animation\AnimatedObject.cpp"/>
+        <FILE id="oBsSWH" name="AnimatedObject.h" compile="0" resource="0"
+              file="Source\Animation\AnimatedObject.h"/>
+        <FILE id="U71nlI" name="LoopTransform.cpp" compile="1" resource="0"
+              file="Source/Animation/LoopTransform.cpp"/>
+        <FILE id="QOuaGo" name="LoopTransform.h" compile="0" resource="0" file="Source/Animation/LoopTransform.h"/>
+        <FILE id="CgdjfC" name="BasicAnimation.cpp" compile="1" resource="0"
+              file="Source/Animation/BasicAnimation.cpp"/>
+        <FILE id="M5NmBD" name="BasicAnimation.h" compile="0" resource="0"
+              file="Source/Animation/BasicAnimation.h"/>
+        <FILE id="ZRuiQ" name="TimerBasedAnimator.cpp" compile="1" resource="0"
+              file="Source/Animation/TimerBasedAnimator.cpp"/>
+        <FILE id="tdyny7" name="TimerBasedAnimator.h" compile="0" resource="0"
+              file="Source/Animation/TimerBasedAnimator.h"/>
+        <FILE id="a634m" name="Animation.cpp" compile="1" resource="0" file="Source/Animation/Animation.cpp"/>
+        <FILE id="oyxZT" name="Animation.h" compile="0" resource="0" file="Source/Animation/Animation.h"/>
+        <FILE id="t08n7M" name="Animator.cpp" compile="1" resource="0" file="Source/Animation/Animator.cpp"/>
+        <FILE id="efq7EU" name="Animator.h" compile="0" resource="0" file="Source/Animation/Animator.h"/>
+        <FILE id="kf5gB3" name="TimingNode.cpp" compile="1" resource="0" file="Source/Animation/TimingNode.cpp"/>
+        <FILE id="hQKdHg" name="TimingNode.h" compile="0" resource="0" file="Source/Animation/TimingNode.h"/>
+      </GROUP>
+      <FILE id="yba9sq" name="MainWindow.cpp" compile="1" resource="0" file="Source\MainWindow.cpp"/>
+      <FILE id="z9b6lC" name="MainWindow.h" compile="0" resource="0" file="Source\MainWindow.h"/>
+      <FILE id="CImH2W" name="Main.cpp" compile="1" resource="0" file="Source\Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_FORCE_DEBUG="default" JUCE_LOG_ASSERTIONS="default" JUCE_ASIO="default"
+               JUCE_WASAPI="default" JUCE_DIRECTSOUND="default" JUCE_ALSA="default"
+               JUCE_QUICKTIME="default" JUCE_OPENGL="default" JUCE_DIRECT2D="default"
+               JUCE_USE_FLAC="default" JUCE_USE_OGGVORBIS="default" JUCE_USE_CDBURNER="default"
+               JUCE_USE_CDREADER="default" JUCE_USE_CAMERA="default" JUCE_ENABLE_REPAINT_DEBUGGING="default"
+               JUCE_USE_XINERAMA="default" JUCE_USE_XSHM="default" JUCE_USE_XRENDER="default"
+               JUCE_USE_XCURSOR="default" JUCE_PLUGINHOST_VST="default" JUCE_PLUGINHOST_AU="default"
+               JUCE_ONLY_BUILD_CORE_LIBRARY="default" JUCE_WEB_BROWSER="default"
+               JUCE_SUPPORT_CARBON="default" JUCE_CHECK_MEMORY_LEAKS="default"
+               JUCE_CATCH_UNHANDLED_EXCEPTIONS="default"/>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
