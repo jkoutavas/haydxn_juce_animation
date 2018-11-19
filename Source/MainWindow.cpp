@@ -21,8 +21,9 @@ class RubbishAnimator	:	public AnimatedValueTree
 {
 public:
 	
-	static const Identifier width;
-	static const Identifier height;
+    static const Identifier Angle;
+	static const Identifier Width;
+	static const Identifier Height;
 
 	RubbishAnimator (Component* target_)
 	:	AnimatedValueTree ("test"),
@@ -38,25 +39,33 @@ public:
 	
 	void refreshValues ()
 	{
-		node.setProperty(width, target->getWidth(), 0);
-		node.setProperty(height, target->getHeight(), 0);		
+        node.setProperty(Angle, angle, nullptr);
+		node.setProperty(Width, target->getWidth(), nullptr);
+		node.setProperty(Height, target->getHeight(), nullptr);
 	}
 	
 	void applyValueTreeChanges (const ValueTree& node)
 	{
-		int w = node.getProperty(width);
-		int h = node.getProperty(height);
+        angle = node.getProperty(Angle);
+		int w = node.getProperty(Width);
+		int h = node.getProperty(Height);
 		target->setSize (w, h);
+
+        auto bounds = target->getBounds();
+        auto cx = bounds.getCentreX();
+        auto cy = bounds.getCentreY();
+        target->setTransform(AffineTransform::rotation(angle, cx, cy));
 	}
 	
 private:
-	
+	float angle;
 	Component* target;
 	
 };
 
-const Identifier RubbishAnimator::width = "width";
-const Identifier RubbishAnimator::height = "height";
+const Identifier RubbishAnimator::Angle = "angle";
+const Identifier RubbishAnimator::Width = "width";
+const Identifier RubbishAnimator::Height = "height";
 
 
 
@@ -92,14 +101,17 @@ public:
 	{
 		if (b == &button)
 		{
+            		float newA;
 			double newH, newW;
 			if (button.getToggleState())
 			{
+                		newA = 3.1415926*2;
 				newH = 100;
 				newW = 200;
 			}
 			else
 			{
+                		newA = 0;
 				newH = 50;
 				newW = 50;
 			}
@@ -109,9 +121,9 @@ public:
 			//TODO: perhaps change to using a AnimatedValueSet instead, where the
 			// values can have sources which directly wrap existing data, removing
 			// the need to manually refresh the local state.
-			
-			rubbish.animateValueTo (RubbishAnimator::width.toString(), newW, d);
-			rubbish.animateValueTo (RubbishAnimator::height.toString(), newH, d);
+            rubbish.animateValueTo (RubbishAnimator::Angle.toString(), newA, d);
+			rubbish.animateValueTo (RubbishAnimator::Width.toString(), newW, d);
+			rubbish.animateValueTo (RubbishAnimator::Height.toString(), newH, d);
 		}
 	}
 	
