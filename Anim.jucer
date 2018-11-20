@@ -35,10 +35,6 @@
   </CONFIGURATIONS>
   <MAINGROUP id="fsJrUo" name="Anim">
     <GROUP id="KI7bs0" name="Source">
-      <GROUP id="dsZusx" name="Utility">
-        <FILE id="vVyw4u" name="NamedSet.cpp" compile="1" resource="0" file="Source/Utility/NamedSet.cpp"/>
-        <FILE id="Zhs4iU" name="NamedSet.h" compile="0" resource="0" file="Source/Utility/NamedSet.h"/>
-      </GROUP>
       <GROUP id="yD73Ne" name="Animation">
         <FILE id="D6S7Ec" name="AnimatedValueTree.cpp" compile="1" resource="0"
               file="Source/Animation/AnimatedValueTree.cpp"/>
