@@ -53,7 +53,7 @@ void Animator::stopAnimation (Animation* anim)
 		animations.removeObject (anim);
 		animationRemoved(anim);
 		
-		retainer = 0;
+		retainer = nullptr;
 	}
 }
 
