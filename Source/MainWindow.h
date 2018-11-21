@@ -11,7 +11,7 @@
 #ifndef __MAINWINDOW_H_288C3C9D__
 #define __MAINWINDOW_H_288C3C9D__
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 
 
 //==============================================================================
