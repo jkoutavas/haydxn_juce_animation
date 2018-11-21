@@ -11,7 +11,7 @@
 #ifndef __TIMINGNODE_H_A6C62E40__
 #define __TIMINGNODE_H_A6C62E40__
 
-#include "../../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 
 /**
 	This is a handy class to be used by objects which need some time-based

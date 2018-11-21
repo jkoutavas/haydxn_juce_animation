@@ -11,7 +11,7 @@
 #ifndef __LOOPTRANSFORM_H_2609ED5D__
 #define __LOOPTRANSFORM_H_2609ED5D__
 
-#include "../../JuceLibraryCode/JuceHeader.h"
+#include "JuceHeader.h"
 
 class LoopTransform
 {
