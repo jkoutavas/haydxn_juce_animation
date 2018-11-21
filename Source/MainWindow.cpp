@@ -101,17 +101,17 @@ public:
 	{
 		if (b == &button)
 		{
-            		float newA;
+            float newA;
 			double newH, newW;
 			if (button.getToggleState())
 			{
-                		newA = 3.1415926*2;
+                newA = 3.1415926*2;
 				newH = 100;
 				newW = 200;
 			}
 			else
 			{
-                		newA = 0;
+                newA = 0;
 				newH = 50;
 				newW = 50;
 			}
