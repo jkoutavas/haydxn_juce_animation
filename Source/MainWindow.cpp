@@ -12,6 +12,19 @@
 #include "Animation/TimerBasedAnimator.h"
 #include "Animation/AnimatedValueTree.h"
 
+static TimerBasedAnimator animator(20); // the main animator
+
+class ColoredComponent : public Component
+{
+public:
+    ColoredComponent() {}
+    void paint(Graphics& g) override
+    {
+        g.setColour(Colours::blue);
+        g.fillAll();
+    }
+};
+
 //==============================================================================
 
 // Really rubbish test class to control the size of a component.
@@ -75,16 +88,19 @@ class TestComp	:	public Component,
 public:
 	
 	TestComp ()
-	:	rubbish(&button),
-		animator(20)
+	:	rubbish(&button), rubbish2(&comp2)
 	{
 		rubbish.setAnimator (&animator);
-		
+        rubbish2.setAnimator (&animator);
+
 		button.setButtonText ("Test");
 		button.setClickingTogglesState (true);
 		button.setBounds (50,50,100,60);
 		addAndMakeVisible(&button);
 		button.addListener (this);
+
+        comp2.setBounds (300,50,100,50);
+        addAndMakeVisible(&comp2);
 	}
 	
 	~TestComp ()
@@ -101,42 +117,55 @@ public:
 	{
 		if (b == &button)
 		{
-            float newA;
-			double newH, newW;
-			if (button.getToggleState())
-			{
-                newA = 3.1415926*2;
-				newH = 100;
-				newW = 200;
-			}
-			else
-			{
-                newA = 0;
-				newH = 50;
-				newW = 50;
-			}
-			double d = 0.3;
-			
-			rubbish.refreshValues (); // make sure we're holding the current values
-			//TODO: perhaps change to using a AnimatedValueSet instead, where the
-			// values can have sources which directly wrap existing data, removing
-			// the need to manually refresh the local state.
-            rubbish.animateValueTo (RubbishAnimator::Angle.toString(), newA, d);
-			rubbish.animateValueTo (RubbishAnimator::Width.toString(), newW, d);
-			rubbish.animateValueTo (RubbishAnimator::Height.toString(), newH, d);
+            {
+                double newH, newW;
+                if (button.getToggleState())
+                {
+                    newH = 100;
+                    newW = 200;
+                }
+                else
+                {
+                    newH = 50;
+                    newW = 50;
+                }
+                double d = .3;
+
+                rubbish.refreshValues (); // make sure we're holding the current values
+                //TODO: perhaps change to using a AnimatedValueSet instead, where the
+                // values can have sources which directly wrap existing data, removing
+                // the need to manually refresh the local state.
+                rubbish.animateValueTo (RubbishAnimator::Width.toString(), newW, d);
+                rubbish.animateValueTo (RubbishAnimator::Height.toString(), newH, d);
+            }
+            {
+                float newA;
+                if (button.getToggleState())
+                {
+                    newA = 3.1415926*2;
+                }
+                else
+                {
+                    newA = 0;
+                }
+                double d = 100;
+
+                rubbish2.refreshValues (); // make sure we're holding the current values
+                //TODO: perhaps change to using a AnimatedValueSet instead, where the
+                // values can have sources which directly wrap existing data, removing
+                // the need to manually refresh the local state.
+                rubbish2.animateValueTo (RubbishAnimator::Angle.toString(), newA, d);
+            }
 		}
 	}
 	
 private:
 	
 	RubbishAnimator rubbish;
-	
-	TimerBasedAnimator animator; // the main animator
-	// note: there would ideally be a globally accessible one (e.g. in the
-	// Desktop class).
-	
+    RubbishAnimator rubbish2;
+
 	TextButton button;
-	
+    ColoredComponent comp2;
 };
 
 

@@ -72,8 +72,10 @@ TimingNode::TimingNode ()
 
 TimingNode::~TimingNode ()
 {
-	jassert (parent == 0); // Must remove from parent before deleting!
-	removeAllChildren ();
+	if (parent)
+    {
+	    removeAllChildren ();
+    }
 }
 
 void TimingNode::addChild (TimingNode* childToAdd)
