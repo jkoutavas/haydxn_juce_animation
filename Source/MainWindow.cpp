@@ -142,13 +142,13 @@ public:
                 float newA;
                 if (button.getToggleState())
                 {
-                    newA = 3.1415926*2;
+                    newA = 3.1415926;
                 }
                 else
                 {
                     newA = 0;
                 }
-                double d = 100;
+                double d = 1;
 
                 rubbish2.refreshValues (); // make sure we're holding the current values
                 //TODO: perhaps change to using a AnimatedValueSet instead, where the
