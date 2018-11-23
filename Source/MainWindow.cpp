@@ -142,7 +142,7 @@ public:
                 float newA;
                 if (button.getToggleState())
                 {
-                    newA = 3.1415926;
+                    newA = MathConstants<float>::twoPi;
                 }
                 else
                 {
